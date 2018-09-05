@@ -14,7 +14,7 @@
                 {{onearr.rate}}
             </div>
         </div>
-        <div v-if="ifs" style="text-align: center">Нету оценок</div>
+        <div v-if="ifs()" style="text-align: center">Нету оценок</div>
     </div>
 </template>
 
@@ -51,14 +51,14 @@
             color:function(one){
                 if (one < 4) {
                    return ' red';
-                } else if (  one >= 4&&one < 8) {
+                } else if (  one >= 4 && one < 8) {
                     return  'orange';
-                } else if (one >= 8&&one <= 10) {
+                } else if (one >= 8 && one <= 10) {
                     return  'green';
                 }
             },
             ifs:function(){
-                return arr.length == 0 ? false: true;
+                return this.arr.length == 0 ?true : false;
             }
         }
 

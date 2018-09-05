@@ -32,6 +32,10 @@
 
 <script>
     import axios from 'axios'
+    import NProgress from 'nprogress'
+    NProgress.configure({
+        template:progress.np()
+    });
     export default {
         name: 'app',
         props:['title','text','ids'],
@@ -46,6 +50,7 @@
         },
         methods: {
             addRate:function() {
+                NProgress.start()
                 let id = this.$router.history.current.params.id;
                 const instance = axios.create({
                     baseURL: 'http://smktesting.herokuapp.com',
@@ -60,9 +65,11 @@
                 })
                     .then(response => {
                         this.$emit('numberBack',1);
+                        NProgress.done()
                     })
                     .catch(response => {
                         console.log(response);
+                        NProgress.done()
                     })
             },
             register:function(){

@@ -38,6 +38,10 @@
 </template>
 <script>
     import axios from 'axios'
+    import NProgress from 'nprogress'
+    NProgress.configure({
+        template:progress.np()
+    });
     export default{
         data(){
             return{
@@ -52,6 +56,10 @@
                 passwordRequire:0,
                 invalidButton:0,
             }
+        },
+        created:function(){
+            NProgress.start()
+            NProgress.done()
         },
         methods:{
             toLogin:function(){
@@ -73,6 +81,7 @@
                 this.valids(!this.password,'password',"Пароль обязательный");
 
                 if(this.count == 0) {
+                    NProgress.start()
                     const instance = axios.create({
                         baseURL: 'http://smktesting.herokuapp.com',
                     });
@@ -82,6 +91,7 @@
                     })
                     .then(response => {
                         if(response.data.success == false){
+                            NProgress.done()
                             this.allEroors = 1;
                             this.invalidButton = 1;
                             this.error0 = response.data.message;
@@ -92,6 +102,7 @@
                             let router = this;
                             setTimeout(function () {
                                 router.$router.push({name:'login'});
+                                NProgress.done()
                             },2000)
                         }
                     })

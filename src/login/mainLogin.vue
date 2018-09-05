@@ -40,6 +40,10 @@
 </style>
 <script>
     import axios from 'axios'
+    import NProgress from 'nprogress'
+    NProgress.configure({
+        template:progress.np()
+    });
     export default {
         data() {
             return {
@@ -54,6 +58,10 @@
                 passwordRequire:0,
                 invalidButton:0
             }
+        },
+        created:function(){
+            NProgress.start()
+            NProgress.done()
         },
         methods:{
             toRegistration:function(){

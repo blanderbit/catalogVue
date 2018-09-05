@@ -36,6 +36,10 @@
     import listRate from './tabs/listRate.vue'
     import inf from './tabs/infTabs.vue'
     import addRate from './tabs/addRate.vue'
+    import NProgress from 'nprogress'
+    NProgress.configure({
+        template:progress.np()
+    });
     export default{
         data(){
             return{
@@ -55,6 +59,7 @@
             }
         },
         created:function(){
+            NProgress.start()
             let id = this.$router.history.current.params.id;
             const instance = axios.create({
                 baseURL: 'http://smktesting.herokuapp.com',
@@ -65,9 +70,11 @@
                     this.text = response.data[id - 1].text;
                     this.img = response.data[id - 1].img;
                     this.id = response.data[id - 1].id;
+                    NProgress.done()
                 })
                 .catch(response => {
                     console.log(response);
+                    this.$router.push({name:'products'});
                 })
         },
         methods:{

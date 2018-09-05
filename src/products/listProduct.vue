@@ -6,6 +6,7 @@
                 <h4 style="text-transform: capitalize">
                     {{arrOne.title}}
                 </h4>
+                <div v-if="!error || error == ''?true:false">{{error}}</div>
                 <p>
                     {{arrOne.text}}
                 </p>
@@ -16,11 +17,16 @@
 
 <script>
     import axios from 'axios'
+    import NProgress from 'nprogress'
+    NProgress.configure({
+        template:progress.np()
+    });
     export default {
         name: 'app',
         data () {
             return {
                 arr:null,
+                error:'',
                 photoNon:'https://thumbs.dreamstime.com' +
                 '/b/%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F-%D0%BA%D0%BE%D1%81%D1%82%D1%8C-' +
                 '%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%B8%D1%82%D0%B5-%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-' +
@@ -28,6 +34,7 @@
             }
         },
         created:function(){
+            NProgress.start()
             const instance = axios.create({
                 baseURL: 'http://smktesting.herokuapp.com',
                 headers:{
@@ -36,9 +43,11 @@
             instance.get('/api/products/', {})
                 .then(response => {
                     this.arr = response.data;
+                    NProgress.done()
                 })
                 .catch(response => {
-                    console.log(response);
+                   this.eroor = response.textStatus;
+                    NProgress.done()
                 })
         },
         methods:{

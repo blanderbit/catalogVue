@@ -14,9 +14,14 @@
     import footer from './products/footer.vue'
     import header from './products/header.vue'
     import list from './products/listProduct.vue'
+
+
     export default{
         data(){
             return{}
+        },
+        created:function () {
+
         },
         components:{
             myFooter:footer,
