@@ -1,0 +1,509 @@
+.navbar{
+    width: 100%;
+    background-image: linear-gradient(to right, red, blue);
+    background-size: cover;
+}
+@media screen and (max-width: 1324px){
+    .allContent{
+        width: 1154px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .contentBackgroundColor{
+        width: 800px;
+    }
+    .product_content{
+        width: auto;
+    }
+    .product_content > div {
+        width: 260px;
+    }
+    .shop{
+        width: 235px;
+    }
+    .footerTop,
+    .footerBottom{
+        width: auto;
+    }
+    .mainHead{width: 100%;}
+    .headRightMEnu .containerCity{
+        left: inherit;
+        right:0px;
+    }.h1{
+         width:100%; position: relative
+     }
+}
+@media screen and (max-width: 1224px){
+    .allContent{
+        width: 1054px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .contentBackgroundColor{
+        width: 700px;
+    }
+    .product_content{
+        width: auto;
+    }
+    .product_content > div {
+        width: 230px;
+    }
+    .shop{
+        width: 205px;
+    }
+}
+@media screen and (max-width: 1124px){
+    nav{
+        width: 1000px;
+    }
+    nav li{
+        padding: 18px;
+        margin-left: -30px;
+    }
+    nav li a {
+        padding: 18px;
+    }
+    .headCenter{
+        width: 350px;
+    }
+    .allContent{
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .contentBackgroundColor{
+        width: 650px;
+    }
+}
+@media screen and (max-width: 1024px){
+    nav{
+        width: 900px;
+    }
+    nav li{
+        padding: 16px;
+        margin-left: -30px;
+    }
+    nav li a {
+        padding: 16px;
+    }
+    .headCenter{
+        width: 320px;
+    }
+    .allContent{
+        width: 910px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .contentBackgroundColor{
+        width: 580px;
+    }
+}
+@media screen and (max-width: 924px){
+    nav{
+        width: 824px;
+    }
+
+    nav li{
+        padding: 14px;
+        margin-left: -30px;
+    }
+    nav li a {
+        padding: 15px;
+        font-size: 13px;
+    }
+    .headCenter{
+        width: 300px;
+    }
+    .allContent{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .contentBackgroundColor{
+        width: 920px;margin-right: 20px;
+        margin-left: 20px;
+    }
+    .product_content{
+        width: auto;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: center;
+    }
+    .product_content > div {
+        width: 200px;
+        margin: 15px!important;
+        flex-grow: 2;
+    }
+    .oneProducts{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 824px){
+    nav{
+        width: 724px;
+    }
+
+    .mainHead > div{
+        display: block;
+    }
+    nav > div{
+        display: block;
+    }
+    nav li{
+        padding: 14.5px;
+        margin-left: -30px;
+        margin-top: -1.5px;
+    }
+    nav li a {
+        padding: 16px;
+        font-size: 12px;
+
+    }
+    .headCenter{
+        width: 250px;
+    }
+    .footerTop,
+    .footerBottom{
+        font-size: 15px;
+    }
+    .order{
+        font-size: 14px;
+    }
+    .order img{
+        width: 130px;
+    }
+    .basketContent{
+        width: 700px;
+    }
+    .cost{
+        width: 150px;
+    }
+    .buttons{
+        font-size: 13px;
+    }.LikesContent{
+         width: 700px;
+     }
+    .costLikes{
+        width: 150px;
+    }
+    .buttonsLikes{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 724px){
+    nav{
+        position: relative;width: auto;
+    }
+    nav > div{
+        display: none;
+        position: absolute;
+        left: 0px;
+        top:50px;
+        z-index: 1200;
+        width: 100%;
+        background: #ff2e66;
+    }
+    nav ul{
+        padding: 0;
+        margin: 0;
+    }
+    nav ul > a{
+        position: static;
+        padding: 10px;
+    }
+    nav  li{
+        float:none;
+        text-align: left;
+        padding: 0px;
+    }
+    nav  li a{
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+    }
+    nav li{
+        margin-left: 0px;
+    }
+    nav .menu{
+        display: block;transition: all 1s;
+    }
+    nav li:nth-child(6),
+    nav li:nth-child(5){
+        float: none;
+        margin-left:0px
+    }
+    nav li:nth-child(6):after{
+        content: '';
+        width: 0px;
+        height: 0px;
+    }
+    .headCenter{
+        width: 220px;
+    }
+    .footerTop,
+    .footerBottom{
+        font-size: 13px;
+    }
+    .order{
+        font-size: 10px;
+    }
+    .order img{
+        width: 100px;
+    }
+    .basketContent{
+        width: 600px;
+    }
+    .cost{
+        width: 100%;
+    }
+    .buttons{
+        font-size: 11px;
+    }.orderLikes{
+         font-size: 10px;
+     }
+    .orderLikes img{
+        width: 100px;
+    }
+    .LikesContent{
+        width: 600px;
+    }
+    .costLikes{
+        width: 100%;
+    }
+    .buttonsLikes{
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 654px){
+    .headCenter{
+        width: 300px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .footerTop,
+    .footerBottom{
+        flex-wrap: wrap;
+        font-size: 15px;
+    }
+    .order{
+        font-size: 15px;
+        flex-wrap: wrap;
+    }
+    .order img{
+        width: 100px;
+    }
+    .basketContent{
+        width: 500px;
+    }
+    .cost{
+        width: 100%;
+    }
+    .buttons{
+        font-size: 11px;
+    } .orderLikes{
+          font-size: 15px;
+          flex-wrap: wrap;
+      }
+    .orderLikes img{
+        width: 100px;
+    }
+    .LikesContent{
+        width: 500px;
+    }
+    .costLikes{
+        width: 100%;
+    }
+    .buttonsLikes{
+        font-size: 11px;
+    }
+    /*.mainHead{*/
+    /*width: auto;*/
+    /*justify-content: center;*/
+    /*}*/
+    .mainHead{
+        width: auto;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: -30px;
+    }
+    .mainHead > div{
+        margin-bottom: 20px;
+    }
+    .headCenter{
+        width: auto;
+    }
+    .headRight{
+        width: auto;
+    }
+    .headRightMEnu .containerCity{
+        width: 250px;
+        left:-64px;
+        right:inherit;
+    }
+    .h1{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.1);
+        margin-bottom: -20px;
+    }
+    .h1 a.button{
+        margin-top: 20px;
+        position: static;
+    }
+}
+@media screen and (max-width: 554px){
+    .footerTop,
+    .footerBottom{
+        flex-wrap: wrap;
+        font-size: 15px;
+    }
+    .footerTop ul{
+        width: 100%;
+        align-items: center;
+        margin-left: -30px;
+    }
+    .order{
+        font-size: 15px;
+        flex-wrap: wrap;
+    }
+    .order img{
+        width: 100px;
+    }
+    .basketContent{
+        width: 400px;
+    }
+    .cost{
+        width: 100%;
+    }
+    .buttons{
+        font-size: 11px;
+    }.orderLikes{
+         font-size: 15px;
+         flex-wrap: wrap;
+     }
+    .orderLikes img{
+        width: 100px;
+    }
+    .LikesContent{
+        width: 400px;
+    }
+    .costLikes{
+        width: 100%;
+    }
+    .buttonsLikes{
+        font-size: 11px;
+    }
+    .headCenter{
+        width: auto;
+    }
+    .headRight{
+        width: auto;
+    }
+    .productInf{
+        width: 100%;
+    }
+    .productInf ul{
+        margin-left: 0px;
+        padding: 20px;
+        width: 90%;
+    }
+    .productInf li,.productInf li:last-child{
+        padding: 20px 20px;
+        float: none;
+    }
+}
+@media screen and (max-width: 424px){
+    .sale-wrap{
+        width: 220px;
+        height: 180px;
+    }
+    .sale-inner{
+        background-size: 200px!important;
+    }
+    .sale-block h3 {
+        font-size: 14px;
+        color: #f9f7f6;
+    }
+    .sale-block span {
+        font-size: 10px;
+    }
+    .contentBackgroundColor{
+        height: 300px;
+    }
+    .action{
+        display: none;
+        position: absolute;
+        bottom:40px;
+    }
+    .action a,
+    .action ion-icon{
+        padding: 10px 10px;
+        margin: 10px 10px;
+        font-size: 10px;
+    }
+    .footerTop{
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+    .footerBottom{
+        font-size: 10px;
+    }
+
+    .right{
+        margin-right: 0px!important;
+        flex-wrap: nowrap;
+    }
+    .order{
+        font-size: 15px;
+        flex-wrap: wrap;
+    }
+    .order img{
+        width: 100px;
+    }
+    .basketContent{
+        width: 100%;
+    }
+    .cost{
+        width: 100%;
+    }
+    .buttons{
+        font-size: 11px;
+    }.orderLikes{
+         font-size: 15px;
+         flex-wrap: wrap;
+     }
+    .orderLikes img{
+        width: 100px;
+    }
+    .LikesContent{
+        width: 100%;
+    }
+    .costLikes{
+        width: 100%;
+    }
+    .buttonsLikes{
+        font-size: 11px;
+    }
+    .mainHead{
+        width: auto;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: -30px;
+    }
+    .mainHead > div{
+        margin-bottom: 20px;
+    }
+    .headCenter{
+        width: auto;
+    }
+    .headRight{
+        width: auto;
+    }
+    .productImg{
+        width: 100%;
+    }
+}
