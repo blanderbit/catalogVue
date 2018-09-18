@@ -20,7 +20,7 @@
                         <a href="#">{{list}}</a>
                     </li>
                 </ul>
-                <ul>
+                <ul class="lastUl">
                     <h4>Другие страны</h4>
                     <li v-for="list in list4">
                         <a href="#">{{list}}</a>
@@ -35,8 +35,8 @@
                     <ion-icon name="logo-vk" class="pointer"></ion-icon>
                     <ion-icon name="logo-facebook" class="pointer"></ion-icon>
                     <ion-icon name="logo-instagram" class="pointer"></ion-icon>
-                    <ion-icon name="arrow-round-up" class="arrowTop pointer" @click="toTop"></ion-icon>
                 </div>
+                <ion-icon name="arrow-round-up" class="arrowTop pointer" @click="toTop"></ion-icon>
             </div>
             <div class="clear"></div>
         </div>
@@ -48,7 +48,7 @@
         data () {
             return {
                 list1:['Kак покупать?','Оставить отзыв','Рекомендации','Программа прав потребителей','Правила'],
-                list2:['Тарифі','Отзывы','Конфедициальность','Правила пользования','Требования'],
+                list2:['Тарифы','Отзывы','Конфедициальность','Правила пользования','Требования'],
                 list3:['О Express.UA','Наши отзывы','Реклама','Правила','Обьявления','Администрация'],
                 list4:['Молдова','Беларусь','Польша','Казахстан']
             }

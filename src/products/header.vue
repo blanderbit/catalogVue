@@ -1,5 +1,42 @@
 <template>
     <header>
+        <div class="upHeader">
+           <div>
+               <ul>
+                   <li>
+                       <a href="#">
+                           ua
+                       </a>
+                   </li>
+                   <li>
+                       /
+                   </li>
+                   <li>
+                       <a href="#" class="activeLang">
+                           ru
+                       </a>
+                   </li>
+               </ul>
+               <ul>
+                   <li v-if="!tokens?true:false">
+                       <a href="#" @click.prevent="register" >
+                           Зарегистрироваться
+                       </a>
+                   </li>
+                   <li v-if="!tokens?true:false">|</li>
+                   <li v-if="!tokens?true:false">
+                       <a href="#" @click.prevent="sign" >
+                           Вход
+                       </a>
+                   </li>
+                   <li v-if="tokens?true:false">
+                       <a href="#" @click.prevent="logout">
+                           Выйти
+                       </a>
+                   </li>
+               </ul>
+           </div>
+        </div>
         <div class="mainHead">
             <div class="headLeft">Express.UA</div>
             <div class="headCenter">
@@ -39,7 +76,48 @@
         </div>
     </header>
 </template>
-
+<style>
+    .upHeader{
+        border-bottom: 1px solid lightgrey;
+        display: flex;
+        justify-content: center;
+    }
+    .upHeader div{
+        width: 900px;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .upHeader ul{
+        list-style: none;
+        display: flex;
+        padding: 0;
+    }
+    .upHeader ul:first-child li{
+        margin: 0 2px
+    }
+    .upHeader ul:first-child a{
+        color: gainsboro;
+        text-decoration: none;
+    }
+    .upHeader ul:first-child a:hover{
+        color: gray!important;
+    }
+    .activeLang{
+        color: gray!important;
+    }
+    .upHeader ul:last-child li{
+        margin: 0 2px
+    }
+    .upHeader ul:last-child a{
+        color: rebeccapurple;
+        text-decoration: none;
+        transition: all 2ms;
+    }
+    .upHeader ul:last-child a:hover{
+        font-weight: bold;
+    }
+</style>
 <script>
     import nav from './nav.vue'
     import Vue from 'vue'
@@ -52,7 +130,8 @@
                 city:'Киев',
                 districts: district,
                 simvols: '',
-                search:''
+                search:'',
+                tokens: token.validToken(),
             }
         },
         components:{
@@ -80,6 +159,19 @@
                 let elem = document.querySelector('.containerCity');
                 elem.style.display = 'none';
             },
+            register:function() {
+                this.$router.push({name:'registration'});
+            },
+            sign:function() {
+                this.$router.push({name:'login'});
+            },
+            logout:function() {
+                let  ask = confirm("Вы точно хотите выйти?");
+                if (ask == true) {
+                    document.cookie = 'token=';
+                    window.location.reload();
+                }
+            }
         },
     }
 </script>

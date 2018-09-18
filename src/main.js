@@ -7,9 +7,8 @@ import products from './product.vue'
 import oneProduct from './oneProduct.vue'
 
 Vue.use(VueRouter)
-
 const router = new VueRouter({
-    base: "/login",
+    mode:'history',
     routes:[
         {path: '/login',name:'login', component: login},
         {path: '/registration',name:'registration', component: registration},

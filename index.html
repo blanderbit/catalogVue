@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/megia.css" rel="stylesheet">
   </head>
@@ -14,5 +15,30 @@
     <script src="./src/districris.js"></script>
     <script src="./src/nprogressTemlate.js"></script>
     <script src="/dist/build.js"></script>
+  <script>
+      let linkcss = document.querySelectorAll('link')
+      let linkjs = document.querySelectorAll('script')
+      links(linkcss,'css')
+      links(linkjs,'js')
+      function links(link,name){
+          for(let i = 1;i<link.length;i++){
+              if(name == 'css') {
+                  if (link[i].href.split('/').length > 5) {
+                      let one = link[i].href.split('/').splice(0, 3).join('/')
+                      let two = link[i].href.split('/').splice(5).join('/')
+                      let rel = one + "/" + two
+                      link[i].href = rel
+                  }
+              }else{
+                  if (link[i].src.split('/').length > 5) {
+                      let one = link[i].src.split('/').splice(0, 3).join('/')
+                      let two = link[i].src.split('/').splice(5).join('/')
+                      let rel = one + "/" + two
+                      link[i].src = rel
+                  }
+              }
+          }
+      }
+  </script>
   </body>
 </html>

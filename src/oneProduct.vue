@@ -60,6 +60,7 @@
         },
         created:function(){
             NProgress.start()
+            window.scrollTo(0,0);
             let id = this.$router.history.current.params.id;
             const instance = axios.create({
                 baseURL: 'http://smktesting.herokuapp.com',

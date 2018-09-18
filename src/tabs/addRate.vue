@@ -8,7 +8,7 @@
                 <div  v-if="!tokens?false:true">
                     <input type="text" v-model="texts" placeholder="Текст"
                            :style="{border:text==''||!text?'1px solid red':'1px solid white'}"/><br>
-                    <div>
+                    <div :style="{color:color(rate)}" style="font-weight: bold">
                         {{rate}}
                     </div>
                     <input type="range" v-model="rate" min="0" max="10" value="5">
@@ -71,6 +71,15 @@
                         console.log(response);
                         NProgress.done()
                     })
+            },
+            color:function(one){
+                if (one < 4) {
+                    return ' red';
+                } else if (  one >= 4 && one < 8) {
+                    return  'orange';
+                } else if (one >= 8 && one <= 10) {
+                    return  'green';
+                }
             },
             register:function(){
                 this.$router.push({name:'registration'});

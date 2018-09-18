@@ -8,35 +8,29 @@
 export default {
   name: 'app',
   data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      return {
+        msg: 'Welcome to Your Vue.js App'
+      }
   },
-    created:function(){
-        this.$router.push({name:'products'})
-    },methods: {
-        hendleResize: function () {
-            let oneNavDiv = document.querySelector('nav > div')
-            let menu = document.querySelector('.menu')
-            menu.style.transform = 'rotate(0deg)'
-            if(window.innerWidth > 724){
-                oneNavDiv.style.display = 'block'
-            }else{
-                oneNavDiv.style.display = 'none'
-            }
-        }
-    }, mounted(){
-        window.addEventListener('resize', this.hendleResize)
-        let oneNavDiv = document.querySelector('nav > div')
-        let menu = document.querySelector('.menu')
-        menu.style.transform = 'rotate(0deg)'
-        if (window.innerWidth > 724) {
-            oneNavDiv.style.display = 'block'
-        } else {
-            oneNavDiv.style.display = 'none'
-        }
-    }
-
+  created:function(){
+      this.$router.push({name:'products'})
+  },
+  methods: {
+      hendleResize: function () {
+          let oneNavDiv = document.querySelector('nav > div')
+          let menu = document.querySelector('.menu')
+          menu.style.transform = 'rotate(0deg)'
+          if(window.innerWidth > 724){
+              oneNavDiv.style.display = 'block'
+          }else{
+              oneNavDiv.style.display = 'none'
+          }
+      },
+  },
+  mounted(){
+      window.addEventListener('resize', this.hendleResize)
+      this.hendleResize()
+  }
 }
 </script>
 
